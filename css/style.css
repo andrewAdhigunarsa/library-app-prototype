@@ -1,0 +1,47 @@
+nav {margin-bottom: 0 !important;
+
+
+}
+
+.fullWidthBackground {
+  /* background-color: lightgrey; */
+  background-image  : url("http://ell.h-cdn.co/assets/16/21/1600x800/landscape-1464377153-elle-0612books-lead.jpg");
+  background-repeat : no-repeat;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.bg {
+  background-image: url("https://oss.adm.ntu.edu.sg/vimal003/wp-content/uploads/sites/279/2015/10/image2.jpg");
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jumbotron div h1 {
+  color: white;
+}
+
+.jumbotron div p {
+  color: white;
+  font-weight: bold;
+
+}
+
+.container .jumbobox{
+  margin: 7%;
+}
+
+.whitebox {
+  padding: 5%;
+  background-color: white;
+
+
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}

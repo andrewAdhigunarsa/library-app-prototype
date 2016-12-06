@@ -1,0 +1,262 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 28, 2016 at 02:39 AM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 5.6.19
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `library_database`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `book_id` int(11) NOT NULL,
+  `isbn` varchar(30) NOT NULL,
+  `title` varchar(60) DEFAULT NULL,
+  `author` varchar(60) NOT NULL,
+  `published` date NOT NULL,
+  `book_description` char(255) DEFAULT NULL,
+  `long_description` varchar(600) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `picture` varchar(600) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`book_id`, `isbn`, `title`, `author`, `published`, `book_description`, `long_description`, `status`, `category_id`, `picture`) VALUES
+(2, '9780571331345', 'The Mistletoe Murder and Other Stories', 'P. D. James', '0000-00-00', 'Four of the best of these have been drawn from the archives and published here. P. D. James''s prose illuminates each of these perfectly formed stories, making them ideal reading for the darkest days of the year.', 'Four of the best of these have been drawn from the archives and published here. P. D. James''s prose illuminates each of these perfectly formed stories, making them ideal reading for the darkest days of the year. While she delights in the secrets that lurk beneath the surface at family gatherings, her Christmas stories also provide tantalizing puzzles to keep the reader guessing. P. D. James embraces the challenge of the short-story form, and ingeniously weaves the strands of plot, setting, characterisation and surprise to create a satisfying whole within only a few thousand words. ', 0, 4, 'images/the-mistletoe-murder-and-other-stories.jpg'),
+(3, '9780733334047', 'Resilient', 'Mitchell Johnson', '0000-00-00', 'Mitchell Johnson is a once-in-a-generation Australian cricketer; a devastating left-arm fast bowler who became a household name following his epic performance in the 2013-14 Ashes series and the subsequent Test series against South Africa.', 'Michael Clarke is an international cricket legend and one of the most talked about Australians of the 21st century. Until 2015 he held ''the highest office in the land'' - Australian cricket captain - and was widely hailed as the sharpest mind in the game.   In a storied career from 2004 - 2015, Clarke played 115 Tests and scored 81 centuries for Australia and NSW with a top score of 329 not out. In that decade Michael Clarke was front page and back page news - his life, cricket career, lovers, friendships and endorsements were splashed across newspapers, magazines and TV networks. ', 1, 3, 'images/xresilient.jpg.pagespeed.ic.h0X-E6uu4o.jpg'),
+(4, '9780733635359', 'Quentin', 'Quentin Kenihan', '0000-00-00', 'When he was seven, Mike Willesee made a documentary about Quentin.', 'When he was seven, Mike Willesee made a documentary about Quentin. Australians fell in love with his wit, humour and never-say-die attitude. Over the years he grew up before our eyes. But there was a dark side to his painful disability and life in the public eye. The true story was never told ... until now. By the time he was 18, Quentin had an extensive drug addiction. They were dark days, with boozy blackouts and thoughts of suicide. Battling his way through, Quentin went to rehab, cleaned up and, as he says, ''stopped feeling sorry for himself''.', 1, 1, 'images/quentin.jpg'),
+(5, '9781471148309', 'Order to Kill', 'Vince Flynn', '0000-00-00', 'In the thrilling new novel from the No.1 New York Times bestselling Mitch Rapp series, Rapp heads to Pakistan to confront a mortal threat he may not be prepared for. In fact, this time he might have met his match.', 'In the thrilling new novel from the No.1 New York Times bestselling Mitch Rapp series, Rapp heads to Pakistan to confront a mortal threat he may not be prepared for. In fact, this time he might have met his match.Michael Clarke is an international cricket legend and one of the most talked about Australians of the 21st century. Until 2015 he held ''the highest office in the land'' - Australian cricket captain - and was widely hailed as the sharpest mind in the game.   In a storied career from 2004 - 2015, Clarke played 115 Tests and scored 81 centuries for Australia and NSW with a top score of 32', 1, 4, 'images/xorder-to-kill.jpg.pagespeed.ic.mnb56UJP8P.jpg'),
+(6, '9781742370828', 'The Sound of Summer', 'Jim Maxwell', '0000-00-00', 'For more than four decades Jim Maxwell has called the cricket for the ABC.', ' For more than four decades Jim Maxwell has called the cricket for the ABC. Since 1973 he has covered over 250 Test matches, including six tours to the West Indies, seven to the subcontinent, over fifty Ashes Tests and five World Cups. His distinctive voice, dryly understated humour and immense knowledge of the game have been part of the fabric of Australian cricket for forty years. It''s not too much to say that Jim is the sound of our summer.', 1, 2, 'images/the-sound-of-summer.jpg'),
+(8, '9781743549490', 'My Story', 'Michael Clarke', '0000-00-00', 'Michael Clarke is an international cricket legend and one of the most talked about Australians of the 21st century.', 'Michael Clarke is an international cricket legend and one of the most talked about Australians of the 21st century. Until 2015 he held ''the highest office in the land'' - Australian cricket captain - and was widely hailed as the sharpest mind in the game.   In a storied career from 2004 - 2015, Clarke played 115 Tests and scored 81 centuries for Australia and NSW with a top score of 329 not out. In that decade Michael Clarke was front page and back page news - his life, cricket career, lovers, friendships and endorsements were splashed across newspapers, magazines and TV networks. ', 1, 2, 'images/xmy-story.jpg.pagespeed.ic.fyMHXaPu5E.jpg'),
+(9, '407772415-5', 'Night School', 'Elliott', '0000-00-00', 'Unspecified subluxation of left foot, subsequent encounter', 'Insertion of Internal Fixation Device into Left Toe Phalangeal Joint, Percutaneous Approach', 1, 4, 'images/night-school.jpg'),
+(10, '231475218-X', 'Magnus Chase and the Hammer of Thor', 'Bowman', '0000-00-00', 'Other reactive arthropathies, hip', 'Occlusion of Right Common Carotid Artery with Extraluminal Device, Open Approach', 1, 1, 'images/xmagnus-chase-and-the-hammer-of-thor.jpg.pagespeed.ic.e9uF1vEfCh.jpg'),
+(11, '298538389-7', 'The Wrong Side of Goodbye', 'Scott', '0000-00-00', 'Toxic effect of venom of gila monster, undetermined, subs', 'Resection of Cerebral Hemisphere, Open Approach', 1, 2, 'images/xthe-wrong-side-of-goodbye.jpg.pagespeed.ic.NhCQcQf2oW.jpg'),
+(12, '883152178-0', 'The Ice Beneath Her', 'Holmes', '0000-00-00', 'Nondisp fx of med condyle of l humer, subs for fx w malunion', 'Restriction of Left Foot Artery, Percutaneous Endoscopic Approach', 0, 3, 'images/the-ice-beneath-her.jpg'),
+(13, '843529988-0', 'Betrayal', 'Carter', '0000-00-00', 'Unspecified subluxation of right toe(s), subs encntr', 'Repair Left Scapula, Percutaneous Endoscopic Approach', 0, 4, 'images/betrayal.jpg'),
+(14, '434356075-9', 'Behind Closed Doors', 'Nichols', '0000-00-00', 'Displ midcervical fx unsp femr, 7thE', 'Dilation of Left Anterior Tibial Artery, Bifurcation, Open Approach', 1, 4, 'images/behind-closed-doors.jpg'),
+(15, '819047723-4', 'The Silence Between Breaths', 'Burns', '0000-00-00', 'Disp fx of unsp tibial spin, 7thN', 'Release Right Upper Extremity Lymphatic, Open Approach', 0, 4, 'images/the-silence-between-breaths.jpg'),
+(16, '361680809-X', 'The Chemist', 'Vasquez', '0000-00-00', 'Other foreign object in larynx causing asphyxiation, sequela', 'Reposition Right Maxilla, Percutaneous Endoscopic Approach', 0, 3, 'images/xthe-chemist.jpg.pagespeed.ic.DoO5ydNdvI.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `borrower`
+--
+
+CREATE TABLE `borrower` (
+  `borrower_id` int(11) NOT NULL,
+  `first_name` varchar(35) NOT NULL,
+  `last_name` varchar(35) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `last_login` datetime NOT NULL,
+  `photo` varchar(600) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `borrower`
+--
+
+INSERT INTO `borrower` (`borrower_id`, `first_name`, `last_name`, `email`, `password`, `created`, `last_login`, `photo`) VALUES
+(5, 'Andrew', 'Adhigunarsa', 'andrew.adhigunarsa@gmail.com', '$2y$10$wqfmFGXKRVlPMqFF3b0x4.ISmTQ.oj9PqohEkAvOD3aLeS7xJL6iS', '2016-11-12 10:54:10', '0000-00-00 00:00:00', NULL),
+(6, 'b', 'b', 'b@b.com', '$2y$10$5uyHUFnS4FwqI46vdmywmeKHxeLN/zp9dWTZIoAsfdYEDPJSI1Q6C', '2016-11-13 17:29:38', '0000-00-00 00:00:00', NULL),
+(7, 'a', 'a', 'a@a.com', '$2y$10$Ubn2EIb1fdDKC638FeLpHOzMSFyKQeCwpSA9yFyR40dqiV13iGkl6', '2016-11-14 01:41:10', '0000-00-00 00:00:00', NULL),
+(8, 'Caroline', 'liong', 'liongcaroline@gmail.com', '$2y$10$V4QxIhVImJRc7BRTCPnn7.bq1hlQxm27sRsGf5zVIHW0nKbAEya4y', '2016-11-17 10:31:42', '0000-00-00 00:00:00', NULL),
+(9, 'e', 'e', 'e@e.com', '$2y$10$vSoDcezwJ1uOTTHciaw73.YsYs0kTlBEDJniQLfPJIpKt6AeqmMHy', '2016-11-24 05:04:12', '0000-00-00 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(60) NOT NULL,
+  `category_description` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `category_name`, `category_description`) VALUES
+(1, 'fiction', 'literature in the form of prose, especially novels, that describes imaginary events and people.'),
+(2, 'non-fiction', 'prose writing that is informative or factual rather than fictional.'),
+(3, 'children', 'Children''s literature or juvenile literature includes stories, books, magazines, and poems that are enjoyed by children. Modern children''s literature is classified in two different ways: genre or the intended age of the reader.'),
+(4, 'academic', 'academic literatures, includes all education and theoretical books.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loan`
+--
+
+CREATE TABLE `loan` (
+  `loan_id` int(11) NOT NULL,
+  `loan_date` date NOT NULL,
+  `date_due` date NOT NULL,
+  `book_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `picture` varchar(150) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `author` varchar(60) NOT NULL,
+  `short_description` varchar(600) NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `loan`
+--
+
+INSERT INTO `loan` (`loan_id`, `loan_date`, `date_due`, `book_id`, `email`, `picture`, `title`, `author`, `short_description`, `status`) VALUES
+(84, '2016-11-24', '2016-12-08', 8, 'e@e.com', 'http://s.squixa.net/www.booktopia.com.au/33/http_coversbooktopiacomau/big/9781743549490/xmy-story.jpg.pagespeed.ic.fyMHXaPu5E.jpg', 'My Story', 'Michael Clarke', 'Michael Clarke is an international cricket legend and one of the most talked about Australians of the 21st century.', 0),
+(85, '2016-11-24', '2016-12-08', 5, 'e@e.com', 'http://s.squixa.net/www.booktopia.com.au/33/http_coversbooktopiacomau/big/9781471148309/xorder-to-kill.jpg.pagespeed.ic.mnb56UJP8P.jpg', 'Order to Kill', 'Vince Flynn', 'In the thrilling new novel from the No.1 New York Times bestselling Mitch Rapp series, Rapp heads to Pakistan to confront a mortal threat he may not be prepared for. In fact, this time he might have met his match.', 0),
+(90, '2016-11-28', '2016-12-12', 2, 'andrew.adhigunarsa@gmail.com', 'images/the-mistletoe-murder-and-other-stories.jpg', 'The Mistletoe Murder and Other Stories', 'P. D. James', 'Four of the best of these have been drawn from the archives and published here. P. D. James&#39;s prose illuminates each of these perfectly formed stories, making them ideal reading for the darkest days of the year.', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_id` int(11) NOT NULL,
+  `subject` varchar(150) NOT NULL,
+  `name` varchar(150) DEFAULT NULL,
+  `email` varchar(150) NOT NULL,
+  `message` varchar(1500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `link` varchar(128) NOT NULL,
+  `showorder` int(11) NOT NULL,
+  `pagesgroup` int(11) NOT NULL,
+  `needlogin` tinyint(1) NOT NULL,
+  `needadmin` tinyint(1) NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `hideonlogin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `title`, `link`, `showorder`, `pagesgroup`, `needlogin`, `needadmin`, `active`, `hideonlogin`) VALUES
+(1, 'Home', 'index.php', 0, 1, 0, 0, 1, 0),
+(2, 'About', 'about.php', 1, 1, 0, 0, 1, 0),
+(3, 'login', 'login.php', 2, 1, 0, 0, 1, 1),
+(4, 'logout', 'logout.php', 3, 1, 1, 0, 1, 0),
+(5, 'register', 'register.php', 4, 0, 0, 0, 1, 1),
+(6, 'account', 'account.php', 5, 0, 1, 0, 1, 0),
+(7, 'contact', 'contact.php', 6, 1, 0, 0, 1, 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `borrower`
+--
+ALTER TABLE `borrower`
+  ADD PRIMARY KEY (`borrower_id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `loan`
+--
+ALTER TABLE `loan`
+  ADD PRIMARY KEY (`loan_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `borrower`
+--
+ALTER TABLE `borrower`
+  MODIFY `borrower_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `loan`
+--
+ALTER TABLE `loan`
+  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
